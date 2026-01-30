@@ -212,6 +212,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MEMBERSHIP SECTION */}
+      <section id="membership" className="py-24 bg-zinc-900 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <SectionHeading title="Membership" centered />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {[
+              {
+                title: "1 Month",
+                img: "https://static.wixstatic.com/media/f5c4b3_f51eceda21d649ca9c1c8e489cfbcd76~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/MONTH.jpg"
+              },
+              {
+                title: "3 Months",
+                img: "https://static.wixstatic.com/media/f5c4b3_b5d5dcdb110e4ac989f952ec7d8b4e9a~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3M.jpg"
+              },
+              {
+                title: "6 Months",
+                img: "https://static.wixstatic.com/media/f5c4b3_50ebd62640424c7394809e01db40c24f~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/6M.jpg"
+              },
+              {
+                title: "12 Months",
+                img: "https://static.wixstatic.com/media/f5c4b3_69ab9cd23b47495786d0738dfd06cbd6~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/12M.jpg"
+              },
+              {
+                title: "Personal Training",
+                img: "https://static.wixstatic.com/media/f5c4b3_215f65d53ffe4c7e8ea265ef209d88d4~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/PT.jpg"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative h-48 overflow-hidden border border-white/10 hover:border-primary transition-all duration-300 shadow-xl"
+              >
+                <img 
+                  src={item.img} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 4. TEAM SECTION */}
       <section id="team" className="py-24 bg-zinc-950 text-white">
         <div className="container mx-auto px-4">

@@ -17,6 +17,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Programs", to: "programs" },
+    { name: "Membership", to: "membership" },
     { name: "Team", to: "team" },
     { name: "Schedule", to: "schedule" },
     { name: "Contact", to: "contact" },
