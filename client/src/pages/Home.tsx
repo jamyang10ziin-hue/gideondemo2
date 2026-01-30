@@ -217,43 +217,56 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <SectionHeading title="Membership" centered />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
                 title: "1 Month",
-                img: "https://static.wixstatic.com/media/f5c4b3_f51eceda21d649ca9c1c8e489cfbcd76~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/MONTH.jpg"
+                price: "$120",
+                features: ["Unlimited Classes", "No Contract", "Full Gym Access"]
               },
               {
                 title: "3 Months",
-                img: "https://static.wixstatic.com/media/f5c4b3_b5d5dcdb110e4ac989f952ec7d8b4e9a~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3M.jpg"
+                price: "$330",
+                features: ["Unlimited Classes", "Discounted Rate", "Full Gym Access", "Performance Tracking"]
               },
               {
                 title: "6 Months",
-                img: "https://static.wixstatic.com/media/f5c4b3_50ebd62640424c7394809e01db40c24f~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/6M.jpg"
+                price: "$600",
+                features: ["Unlimited Classes", "Best Value", "Full Gym Access", "1-on-1 Strategy Session"]
               },
               {
                 title: "12 Months",
-                img: "https://static.wixstatic.com/media/f5c4b3_69ab9cd23b47495786d0738dfd06cbd6~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/12M.jpg"
+                price: "$1100",
+                features: ["Unlimited Classes", "Annual Commitment", "Full Gym Access", "Free Academy Tee"]
               },
               {
                 title: "Personal Training",
-                img: "https://static.wixstatic.com/media/f5c4b3_215f65d53ffe4c7e8ea265ef209d88d4~mv2.jpg/v1/fill/w_311,h_195,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/PT.jpg"
+                price: "Custom",
+                features: ["1-on-1 Coaching", "Custom Workout Plan", "Nutrition Guidance", "Flexible Scheduling"]
               }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative h-48 overflow-hidden border border-white/10 hover:border-primary transition-all duration-300 shadow-xl"
+                className="bg-black border border-white/10 p-8 flex flex-col items-center text-center group hover:border-primary transition-all duration-300 shadow-2xl skew-x-[-2deg]"
               >
-                <img 
-                  src={item.img} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
+                <h3 className="text-2xl font-display font-bold text-white uppercase italic mb-4 group-hover:text-primary transition-colors">
+                  {item.title}
+                </h3>
+                <div className="text-4xl font-display font-bold text-primary mb-6">
+                  {item.price}
+                </div>
+                <ul className="space-y-3 mb-8 text-gray-400 text-sm flex-1">
+                  {item.features.map((feature, fIndex) => (
+                    <li key={fIndex} className="uppercase tracking-widest">{feature}</li>
+                  ))}
+                </ul>
+                <Button className="w-full bg-primary text-black font-bold uppercase tracking-widest hover:bg-white rounded-none skew-x-[-10deg]">
+                  <span className="skew-x-[10deg]">Select Plan</span>
+                </Button>
               </motion.div>
             ))}
           </div>
@@ -317,24 +330,29 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <SectionHeading title="Program Schedule" centered />
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
-              "https://static.wixstatic.com/media/f5c4b3_64fbb40612e749329c0ffdb300b0617c~mv2.png",
-              "https://static.wixstatic.com/media/f5c4b3_68e89af6fbae4ae39683cb31062a80d1~mv2.png",
-              "https://static.wixstatic.com/media/f5c4b3_dac71b2cebf24715a07432f5db96cf6f~mv2.png",
-              "https://static.wixstatic.com/media/f5c4b3_f2af309dbea348a4afa9e53261292fb0~mv2.png",
-              "https://static.wixstatic.com/media/f5c4b3_132c985afa004730a8a9fb614a8a14df~mv2.png",
-              "https://static.wixstatic.com/media/f5c4b3_e9ccae0c08a44aa3bc948428e9ab7b07~mv2.png"
-            ].map((src, index) => (
+              { day: "Monday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Boxercise"] },
+              { day: "Tuesday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Kids Boxing"] },
+              { day: "Wednesday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Boxercise"] },
+              { day: "Thursday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Womens Only"] },
+              { day: "Friday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Open Gym"] },
+              { day: "Saturday", classes: ["9:00 AM - 11:00 AM: All Levels"] }
+            ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white/5 p-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="bg-zinc-900 border-l-4 border-primary p-6 shadow-xl"
               >
-                <img src={src} alt={`Schedule Day ${index + 1}`} className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity" />
+                <h4 className="text-xl font-display font-bold text-white uppercase italic mb-4">{item.day}</h4>
+                <ul className="space-y-2">
+                  {item.classes.map((cls, cIndex) => (
+                    <li key={cIndex} className="text-gray-400 text-sm font-medium border-b border-white/5 pb-2 last:border-0">{cls}</li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
