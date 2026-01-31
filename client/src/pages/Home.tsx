@@ -222,27 +222,27 @@ export default function Home() {
               {
                 title: "1 Month",
                 price: "$120",
-                features: ["Unlimited Classes", "No Contract", "Full Gym Access"]
+                features: ["Unlimited Classes", "Registration Fee: $25 (Non-Refundable)", "Gideon Academy T-Shirt Included"]
               },
               {
                 title: "3 Months",
                 price: "$330",
-                features: ["Unlimited Classes", "Discounted Rate", "Full Gym Access", "Performance Tracking"]
+                features: ["Unlimited Classes", "No Registration Fee", "Gideon Academy T-Shirt Included"]
               },
               {
                 title: "6 Months",
                 price: "$600",
-                features: ["Unlimited Classes", "Best Value", "Full Gym Access", "1-on-1 Strategy Session"]
+                features: ["Unlimited Classes", "No Registration Fee", "Gideon Academy T-Shirt Included"]
               },
               {
                 title: "12 Months",
                 price: "$1100",
-                features: ["Unlimited Classes", "Annual Commitment", "Full Gym Access", "Free Academy Tee"]
+                features: ["Unlimited Classes", "No Registration Fee", "Gideon Academy T-Shirt Included"]
               },
               {
                 title: "Personal Training",
-                price: "Custom",
-                features: ["1-on-1 Coaching", "Custom Workout Plan", "Nutrition Guidance", "Flexible Scheduling"]
+                price: "$75 - $100 / HR",
+                features: ["1 on 1 Individual Training", "Technical Development", "Strength & Conditioning", "Flexible Scheduling"]
               }
             ].map((item, index) => (
               <motion.div
@@ -337,7 +337,7 @@ export default function Home() {
               { day: "Wednesday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Boxercise"] },
               { day: "Thursday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Womens Only"] },
               { day: "Friday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Open Gym"] },
-              { day: "Saturday", classes: ["9:00 AM - 11:00 AM: All Levels"] }
+              { day: "Saturday", classes: ["9:00 AM - 11:00 AM: All Levels Boxing"] }
             ].map((item, index) => (
               <motion.div
                 key={index}
