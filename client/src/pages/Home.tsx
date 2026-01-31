@@ -147,27 +147,27 @@ export default function Home() {
               {
                 title: "COMPETITIVE",
                 desc: "Complete training schedule for competition.",
-                img: "https://static.wixstatic.com/media/f5c4b3_8db18d5075024f72a45093fbc5bd5c39~mv2.jpg/v1/crop/x_1334,y_0,w_3331,h_4000/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_0052_JPG.jpg"
+                img: "https://static.wixstatic.com/media/f5c4b3_977169f9f94d48518e932200ec0139b4~mv2.jpg"
               },
               {
                 title: "TECHNICAL",
                 desc: "Learn the basics of boxing techniques and fundamentals.",
-                img: "https://static.wixstatic.com/media/f5c4b3_e462ebf0088248d7ba55192b53cd5302~mv2.jpg/v1/crop/x_764,y_0,w_3328,h_4000/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_0881_JPG.jpg"
+                img: "https://static.wixstatic.com/media/f5c4b3_04f08e8697194605963f46f8c75d7e5d~mv2.jpg"
               },
               {
                 title: "PERSONAL TRAINING",
                 desc: "Individualized and private training sessions focused on your goals.",
-                img: "https://static.wixstatic.com/media/f5c4b3_a694921f0b8146efa1759297d82c6e36~mv2.jpg/v1/crop/x_1828,y_0,w_3328,h_4000/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_0828_JPG.jpg"
+                img: "https://static.wixstatic.com/media/f5c4b3_0706216a61764619ba1812e9b0d10c85~mv2.jpg"
               },
               {
                 title: "KIDS BOXING",
                 desc: "Teaches kids self-defense and delivers an excellent workout!",
-                img: "https://static.wixstatic.com/media/f5c4b3_7f0c5a8409694de7839752b082ccbf0d~mv2.png/v1/crop/x_0,y_200,w_3024,h_3631/fill/w_269,h_323,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5399_HEIC.png"
+                img: "https://static.wixstatic.com/media/f5c4b3_7f0c5a8409694de7839752b082ccbf0d~mv2.png"
               },
               {
                 title: "WOMENS BOXING",
                 desc: "Womens Only class Led by female instructors",
-                img: "https://static.wixstatic.com/media/f5c4b3_3421f149c0a84bc285a66261b1e308b5f002.jpg/v1/fill/w_298,h_529,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f5c4b3_3421f149c0a84bc285a66261b1e308b5f002.jpg"
+                img: "https://static.wixstatic.com/media/f5c4b3_0959828d00924976935261395996f081~mv2.jpg"
               }
             ].map((program, index) => (
               <motion.div
@@ -207,29 +207,42 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                title: "1 Month",
-                price: "$120",
-                features: ["Unlimited Classes", "Registration Fee: $25 (Non-Refundable)", "Gideon Academy T-Shirt Included"]
+                title: "MONTHLY",
+                details: [
+                  { label: "ADULT", value: "$120" },
+                  { label: "YOUTH/STUDENT", value: "$90" },
+                  { label: "CHILDREN 7-12YRS", value: "$70" }
+                ]
               },
               {
-                title: "3 Months",
-                price: "$330",
-                features: ["Unlimited Classes", "No Registration Fee", "Gideon Academy T-Shirt Included"]
+                title: "3 MONTHS",
+                details: [
+                  { label: "ADULT", value: "$320" },
+                  { label: "YOUTH/STUDENT", value: "$240" }
+                ]
               },
               {
-                title: "6 Months",
-                price: "$600",
-                features: ["Unlimited Classes", "No Registration Fee", "Gideon Academy T-Shirt Included"]
+                title: "6 MONTHS",
+                details: [
+                  { label: "ADULT", value: "$600" },
+                  { label: "YOUTH/STUDENT", value: "$450" }
+                ]
               },
               {
-                title: "12 Months",
-                price: "$1100",
-                features: ["Unlimited Classes", "No Registration Fee", "Gideon Academy T-Shirt Included"]
+                title: "12 MONTHS",
+                details: [
+                  { label: "ADULT", value: "$1150" },
+                  { label: "YOUTH/STUDENT", value: "$850" }
+                ]
               },
               {
-                title: "Personal Training",
-                price: "$75 - $100 / HR",
-                features: ["1 on 1 Individual Training", "Technical Development", "Strength & Conditioning", "Flexible Scheduling"]
+                title: "PERSONAL TRAINING",
+                subtitle: "BY APPOINTMENT ONLY",
+                details: [
+                  { label: "1HR SESSION", value: "$75" },
+                  { label: "WEEKLY SESSION", value: "$65" },
+                  { label: "BI-WEEKLY SESSION", value: "$50" }
+                ]
               }
             ].map((item, index) => (
               <motion.div
@@ -238,21 +251,24 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-black border border-white/10 p-8 flex flex-col items-center text-center group hover:border-primary transition-all duration-300 shadow-2xl skew-x-[-2deg]"
+                className="bg-black border border-white/10 p-8 flex flex-col group hover:border-primary transition-all duration-300 shadow-2xl skew-x-[-2deg]"
               >
-                <h3 className="text-2xl font-display font-bold text-white uppercase italic mb-4 group-hover:text-primary transition-colors">
+                <h3 className="text-3xl font-display font-bold text-white uppercase italic mb-2 group-hover:text-primary transition-colors text-center">
                   {item.title}
                 </h3>
-                <div className="text-4xl font-display font-bold text-primary mb-6">
-                  {item.price}
-                </div>
-                <ul className="space-y-3 mb-8 text-gray-400 text-sm flex-1">
-                  {item.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="uppercase tracking-widest">{feature}</li>
+                {item.subtitle && (
+                  <p className="text-primary text-xs font-bold tracking-widest text-center mb-6 uppercase">{item.subtitle}</p>
+                )}
+                <div className="flex-1 mt-4 space-y-4">
+                  {item.details.map((detail, dIndex) => (
+                    <div key={dIndex} className="flex justify-between items-center border-b border-white/5 pb-2">
+                      <span className="text-gray-400 font-bold text-sm tracking-wider uppercase">{detail.label}</span>
+                      <span className="text-primary font-display font-bold text-xl">{detail.value}</span>
+                    </div>
                   ))}
-                </ul>
-                <Button className="w-full bg-primary text-black font-bold uppercase tracking-widest hover:bg-white rounded-none skew-x-[-10deg]">
-                  <span className="skew-x-[10deg]">Select Plan</span>
+                </div>
+                <Button className="w-full mt-8 bg-primary text-black font-bold uppercase tracking-widest hover:bg-white rounded-none skew-x-[-10deg]">
+                  <span className="skew-x-[10deg]">Join Now</span>
                 </Button>
               </motion.div>
             ))}
