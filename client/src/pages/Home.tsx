@@ -36,19 +36,7 @@ export default function Home() {
       <Navbar />
       
       {/* 1. HERO SECTION */}
-      <section id="hero" className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/60 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40 z-10" />
-          <img 
-            src="https://static.wixstatic.com/media/f5c4b3_9d7951d7ae24486d97ec56ac83e5a10d~mv2.jpg/v1/crop/x_0,y_11,w_3000,h_1675/fill/w_717,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Front%20Image_edited.jpg"
-            alt="Boxing Ring"
-            className="w-full h-full object-cover transform scale-105 animate-slow-zoom" 
-            style={{ animation: 'pulse 20s infinite alternate' }}
-          />
-        </div>
-
+      <section id="hero" className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-black">
         <div className="container relative z-20 px-4 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}

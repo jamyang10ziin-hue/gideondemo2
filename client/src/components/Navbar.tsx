@@ -32,7 +32,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <ScrollLink to="hero" smooth={true} duration={500} className="cursor-pointer group">
           <div className="font-display font-bold text-2xl md:text-3xl text-white tracking-tighter uppercase italic">
-            Gideon <span className="text-primary group-hover:text-white transition-colors">Boxing</span>
+            Gideon <span className="text-primary group-hover:text-white transition-colors">Boxing Academy</span>
           </div>
         </ScrollLink>
 
