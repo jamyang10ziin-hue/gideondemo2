@@ -16,10 +16,11 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Team", to: "team" },
     { name: "Programs", to: "programs" },
     { name: "Membership", to: "membership" },
-    { name: "Team", to: "team" },
     { name: "Schedule", to: "schedule" },
+    { name: "FAQ", to: "faq" },
     { name: "Contact", to: "contact" },
   ];
 

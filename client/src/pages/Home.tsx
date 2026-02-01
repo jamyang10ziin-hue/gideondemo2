@@ -79,61 +79,60 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-24 bg-background clip-diagonal-reverse z-20 translate-y-1"></div>
       </section>
 
-      {/* 2. INTRO SECTION */}
-      <section className="py-24 relative bg-zinc-900">
+      {/* 2. TEAM SECTION */}
+      <section id="team" className="py-24 bg-zinc-950 text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-display font-bold uppercase text-white mb-8 leading-tight">
-                More Than Just <span className="text-primary">Boxing</span>
-              </h2>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light border-l-4 border-primary pl-6 py-2">
-                "Gideon Boxing's focus on health lifestyle both in and out of the ring means we all have the ability to learn valuable life lessons that go far beyond just boxing."
-              </p>
-            </motion.div>
+          <SectionHeading title="Team Mighty" centered />
 
-            <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: 'HORACE "The Mighty" HUNTER',
+                role: "HEAD COACH",
+                desc: "Pro debut 2010. Level 3 Technical coach. Established Gideon Boxing Academy 2014 and risen to be the strongest competitive boxing gym in Scarborough.",
+                img: "https://static.wixstatic.com/media/f5c4b3_b67bad6e03c041fba319d27598d200e3~mv2.jpg/v1/crop/x_381,y_0,w_1112,h_1335/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_0795_edited.jpg"
+              },
+              {
+                name: 'BONNIE "WARRIOR QUEEN" HUNTER',
+                role: "Assistant Coach | Professional Fighter",
+                desc: "Pro debut 2021. Level 1 N.C.C.P certified coach. Over 60 fights, Silver Gloves, Bronze Gloves. Provincial Team female coach.",
+                img: "https://static.wixstatic.com/media/f5c4b3_b3070b0945bc4728af41cf2314ed899c~mv2.jpg/v1/crop/x_0,y_72,w_1352,h_1623/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Bonnie%20Pro_edited.jpg"
+              },
+              {
+                name: 'MATHUSAN "Tiger" MAHINDAS',
+                role: "Boxing Instructor | Professional Fighter",
+                desc: "Pro debut 2022. Golden Gloves, Brampton Cup, Silver Gloves, State Games of America.",
+                img: "https://static.wixstatic.com/media/f5c4b3_a33743f6353a4625bc66a97eeb7d3b49~mv2.jpg/v1/crop/x_178,y_4,w_3271,h_3931/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Mathu1.jpg"
+              },
+              {
+                name: 'CALVIN HO',
+                role: "Boxing Instructor",
+                desc: "Head Boxing Instructor 2015. Over 10 years teaching, mentoring, and coaching. Competed Amateur Level.",
+                img: "https://static.wixstatic.com/media/f5c4b3_ad26568849954982bd53a7f7594c8cce~mv2.jpg/v1/crop/x_336,y_0,w_1280,h_1537/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_0019_edited.jpg"
+              }
+            ].map((member, index) => (
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-black border border-white/5 hover:border-primary/50 transition-colors p-6 text-center group"
               >
-                <div className="absolute inset-0 border-2 border-primary translate-x-2 translate-y-2 z-0" />
-                <img 
-                  src="https://static.wixstatic.com/media/f5c4b3_4d834d50b2824d8d902edd013bea6bf6~mv2.jpg/v1/fit/w_827,h_640,q_90,enc_avif,quality_auto/f5c4b3_4d834d50b2824d8d902edd013bea6bf6~mv2.jpg"
-                  alt="Training"
-                  className="relative z-10 w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                />
+                <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden mb-6 border-2 border-white/10 group-hover:border-primary transition-colors">
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+                </div>
+                <h4 className="text-primary font-bold text-sm tracking-widest uppercase mb-2">{member.role}</h4>
+                <h3 className="text-xl font-display font-bold text-white mb-4 leading-tight">{member.name}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{member.desc}</p>
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="relative mt-12"
-              >
-                <div className="absolute inset-0 border-2 border-white translate-x-2 translate-y-2 z-0" />
-                <img 
-                  src="https://static.wixstatic.com/media/f5c4b3_66010c93da114287b102aba8b27562e7~mv2.jpg/v1/fit/w_964,h_640,q_90,enc_avif,quality_auto/f5c4b3_66010c93da114287b102aba8b27562e7~mv2.jpg"
-                  alt="Coach Hunter"
-                  className="relative z-10 w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                />
-              </motion.div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* 3. PROGRAMS SECTION */}
       <section id="programs" className="py-24 bg-background relative">
-        {/* Background Element */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-zinc-900/50 skew-x-[-12deg] z-0 pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10">
@@ -199,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MEMBERSHIP SECTION */}
+      {/* 4. MEMBERSHIP SECTION */}
       <section id="membership" className="py-24 bg-zinc-900 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <SectionHeading title="Membership" centered />
@@ -276,58 +275,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. TEAM SECTION */}
-      <section id="team" className="py-24 bg-zinc-950 text-white">
-        <div className="container mx-auto px-4">
-          <SectionHeading title="Team Mighty" centered />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: 'HORACE "The Mighty" HUNTER',
-                role: "HEAD COACH",
-                desc: "Pro debut 2010. Level 3 Technical coach. Established Gideon Boxing Academy 2014 and risen to be the strongest competitive boxing gym in Scarborough.",
-                img: "https://static.wixstatic.com/media/f5c4b3_b67bad6e03c041fba319d27598d200e3~mv2.jpg/v1/crop/x_381,y_0,w_1112,h_1335/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_0795_edited.jpg"
-              },
-              {
-                name: 'BONNIE "WARRIOR QUEEN" HUNTER',
-                role: "Assistant Coach | Professional Fighter",
-                desc: "Pro debut 2021. Level 1 N.C.C.P certified coach. Over 60 fights, Silver Gloves, Bronze Gloves. Provincial Team female coach.",
-                img: "https://static.wixstatic.com/media/f5c4b3_b3070b0945bc4728af41cf2314ed899c~mv2.jpg/v1/crop/x_0,y_72,w_1352,h_1623/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Bonnie%20Pro_edited.jpg"
-              },
-              {
-                name: 'MATHUSAN "Tiger" MAHINDAS',
-                role: "Boxing Instructor | Professional Fighter",
-                desc: "Pro debut 2022. Golden Gloves, Brampton Cup, Silver Gloves, State Games of America.",
-                img: "https://static.wixstatic.com/media/f5c4b3_a33743f6353a4625bc66a97eeb7d3b49~mv2.jpg/v1/crop/x_178,y_4,w_3271,h_3931/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Mathu1.jpg"
-              },
-              {
-                name: 'CALVIN HO',
-                role: "Boxing Instructor",
-                desc: "Head Boxing Instructor 2015. Over 10 years teaching, mentoring, and coaching. Competed Amateur Level.",
-                img: "https://static.wixstatic.com/media/f5c4b3_ad26568849954982bd53a7f7594c8cce~mv2.jpg/v1/crop/x_336,y_0,w_1280,h_1537/fill/w_269,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_0019_edited.jpg"
-              }
-            ].map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-black border border-white/5 hover:border-primary/50 transition-colors p-6 text-center group"
-              >
-                <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden mb-6 border-2 border-white/10 group-hover:border-primary transition-colors">
-                  <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
-                </div>
-                <h4 className="text-primary font-bold text-sm tracking-widest uppercase mb-2">{member.role}</h4>
-                <h3 className="text-xl font-display font-bold text-white mb-4 leading-tight">{member.name}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{member.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 5. SCHEDULE SECTION */}
       <section id="schedule" className="py-24 bg-background">
         <div className="container mx-auto px-4">
@@ -356,6 +303,35 @@ export default function Home() {
                     <li key={cIndex} className="text-gray-400 text-sm font-medium border-b border-white/5 pb-2 last:border-0">{cls}</li>
                   ))}
                 </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FAQ SECTION */}
+      <section id="faq" className="py-24 bg-zinc-900">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <SectionHeading title="Frequently Asked Questions" centered />
+          
+          <div className="space-y-4">
+            {[
+              { q: "CAN I COME IN FOR A FREE TRIAL?", a: "YES, ALL PROSPECTIVE MEMBERS ARE WELCOME TO COME IN FOR ONE FREE TRIAL CLASS TO SEE IF OUR PROGRAMS ARE THE RIGHT FIT FOR YOU." },
+              { q: "WHAT DO I NEED TO BRING?", a: "FOR YOUR FIRST CLASS, ALL YOU NEED IS COMFORTABLE GYM WEAR, CLEAN INDOOR SHOES (OR BOXING SHOES), AND A WATER BOTTLE. WE HAVE GLOVES AVAILABLE TO BORROW FOR YOUR FIRST FEW SESSIONS." },
+              { q: "DO I NEED TO BE IN SHAPE TO START?", a: "NOT AT ALL. OUR PROGRAMS ARE DESIGNED TO HELP YOU GET IN SHAPE. WE HAVE MEMBERS OF ALL FITNESS LEVELS STARTING THEIR JOURNEY WITH US." },
+              { q: "IS THERE AN AGE LIMIT?", a: "WE HAVE CLASSES FOR CHILDREN AS YOUNG AS 7 YEARS OLD. THERE IS NO UPPER AGE LIMIT—AS LONG AS YOU ARE MEDICALLY CLEARED FOR EXERCISE, YOU ARE WELCOME TO TRAIN." },
+              { q: "DO YOU OFFER PRIVATE SESSIONS?", a: "YES, WE OFFER PERSONAL TRAINING SESSIONS FOR MORE INDIVIDUALIZED INSTRUCTION. THESE ARE BY APPOINTMENT ONLY." }
+            ].map((faq, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-black border border-white/10 p-6 group hover:border-primary transition-colors"
+              >
+                <h4 className="text-primary font-bold text-lg mb-2 uppercase tracking-tight">{faq.q}</h4>
+                <p className="text-gray-400 font-light leading-relaxed">{faq.a}</p>
               </motion.div>
             ))}
           </div>
