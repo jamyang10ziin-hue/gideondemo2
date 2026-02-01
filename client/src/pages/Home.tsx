@@ -282,12 +282,12 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
-              { day: "Monday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Boxercise"] },
-              { day: "Tuesday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Kids Boxing"] },
-              { day: "Wednesday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Boxercise"] },
-              { day: "Thursday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Technical", "7:00 PM - 8:30 PM: Womens Only"] },
-              { day: "Friday", classes: ["4:00 PM - 5:30 PM: Competitive", "5:30 PM - 7:00 PM: Open Gym"] },
-              { day: "Saturday", classes: ["9:00 AM - 11:00 AM: All Levels Boxing"] }
+              { day: "MONDAY", classes: ["COMPETITIVE: 4:00PM - 6:00PM", "BOOT CAMP: 6:00PM - 6:45PM", "TECHNICAL: 7:00PM - 8:00PM"] },
+              { day: "TUESDAY", classes: ["TECHNICAL: 12:00PM - 1:00PM", "COMPETITIVE: 4:00PM - 6:00PM", "KIDS CLASS: 6:00PM - 7:00PM", "TECHNICAL: 7:00PM - 8:00PM", "OPEN GYM: 8:00PM - 9:00PM"] },
+              { day: "WEDNESDAY", classes: ["COMPETITIVE: 4:00PM - 6:00PM", "BOOT CAMP: 6:00PM - 6:45PM", "TECHNICAL: 7:00PM - 8:00PM"] },
+              { day: "THURSDAY", classes: ["TECHNICAL: 12:00PM - 1:00PM", "COMPETITIVE: 4:00PM - 6:00PM", "KIDS CLASS: 6:00PM - 7:00PM", "TECHNICAL: 7:00PM - 8:00PM", "OPEN GYM: 8:00PM - 9:00PM"] },
+              { day: "FRIDAY", classes: ["COMPETITIVE: 4:00PM - 6:00PM", "TECHNICAL: 6:00PM - 6:45PM"] },
+              { day: "SATURDAY", classes: ["KIDS CLASS: 10:00AM - 11:00AM", "OPEN GYM: 11:00AM - 12:00PM"] }
             ].map((item, index) => (
               <motion.div
                 key={index}
