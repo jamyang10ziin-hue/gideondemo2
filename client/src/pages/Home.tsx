@@ -146,12 +146,12 @@ export default function Home() {
               {
                 title: "COMPETITIVE",
                 desc: "Complete training schedule for competition.",
-                img: "https://static.wixstatic.com/media/f5c4b3_977169f9f94d48518e932200ec0139b4~mv2.jpg"
+                img: "https://static.wixstatic.com/media/f5c4b3_04f08e8697194605963f46f8c75d7e5d~mv2.jpg"
               },
               {
                 title: "TECHNICAL",
                 desc: "Learn the basics of boxing techniques and fundamentals.",
-                img: "https://static.wixstatic.com/media/f5c4b3_04f08e8697194605963f46f8c75d7e5d~mv2.jpg"
+                img: "https://static.wixstatic.com/media/f5c4b3_977169f9f94d48518e932200ec0139b4~mv2.jpg"
               },
               {
                 title: "PERSONAL TRAINING",
@@ -175,14 +175,14 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative h-[400px] overflow-hidden border border-white/10 bg-zinc-900 cursor-pointer"
+                className="group relative h-[450px] overflow-hidden border border-white/10 bg-zinc-900 cursor-pointer"
               >
                 <img 
                   src={program.img} 
                   alt={program.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
                 
                 <div className="absolute bottom-0 left-0 w-full p-6 border-l-4 border-transparent group-hover:border-primary transition-all duration-300">
                   <h3 className="text-3xl font-display font-bold text-white mb-2 italic group-hover:text-primary transition-colors">
