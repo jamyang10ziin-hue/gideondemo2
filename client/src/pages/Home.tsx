@@ -8,7 +8,11 @@ import { useCreateInquiry } from "@/hooks/use-inquiries";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type InsertInquiry, insertInquirySchema } from "@shared/schema";
-import { motion } from "framer-motion";
+import personalTrainingImg from "@assets/personal_training_1769995159191.jpeg";
+import kidsBoxingImg from "@assets/kids_boxing_1769995170133.jpeg";
+import womensBoxingImg from "@assets/IMG_1455_1769995179716.AVIF";
+import competitiveImg from "@assets/competitive_1769995133368.jpeg";
+import technicalImg from "@assets/technical_1769995147942.jpeg";
 import { Link as ScrollLink } from "react-scroll";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
 
@@ -146,27 +150,27 @@ export default function Home() {
               {
                 title: "COMPETITIVE",
                 desc: "Complete training schedule for competition.",
-                img: "https://static.wixstatic.com/media/f5c4b3_04f08e8697194605963f46f8c75d7e5d~mv2.jpg"
+                img: competitiveImg
               },
               {
                 title: "TECHNICAL",
                 desc: "Learn the basics of boxing techniques and fundamentals.",
-                img: "https://static.wixstatic.com/media/f5c4b3_977169f9f94d48518e932200ec0139b4~mv2.jpg"
+                img: technicalImg
               },
               {
                 title: "PERSONAL TRAINING",
                 desc: "Individualized and private training sessions focused on your goals.",
-                img: "https://static.wixstatic.com/media/f5c4b3_0706216a61764619ba1812e9b0d10c85~mv2.jpg"
+                img: personalTrainingImg
               },
               {
                 title: "KIDS BOXING",
                 desc: "Teaches kids self-defense and delivers an excellent workout!",
-                img: "https://static.wixstatic.com/media/f5c4b3_7f0c5a8409694de7839752b082ccbf0d~mv2.png"
+                img: kidsBoxingImg
               },
               {
                 title: "WOMENS BOXING",
                 desc: "Womens Only class Led by female instructors",
-                img: "https://static.wixstatic.com/media/f5c4b3_0959828d00924976935261395996f081~mv2.jpg"
+                img: womensBoxingImg
               }
             ].map((program, index) => (
               <motion.div
