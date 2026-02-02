@@ -8,6 +8,7 @@ import { useCreateInquiry } from "@/hooks/use-inquiries";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type InsertInquiry, insertInquirySchema } from "@shared/schema";
+import { motion } from "framer-motion";
 import personalTrainingImg from "@assets/personal_training_1769995159191.jpeg";
 import kidsBoxingImg from "@assets/kids_boxing_1769995170133.jpeg";
 import womensBoxingImg from "@assets/IMG_1455_1769995179716.AVIF";
