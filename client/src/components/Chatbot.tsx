@@ -63,6 +63,34 @@ export function Chatbot() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       <AnimatePresence>
+        {!isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: 20, scale: 0.8 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
+              y: [0, -4, 0] 
+            }}
+            transition={{ 
+              opacity: { duration: 0.3 },
+              x: { duration: 0.3 },
+              scale: { duration: 0.3 },
+              y: { 
+                repeat: Infinity, 
+                duration: 2, 
+                ease: "easeInOut" 
+              }
+            }}
+            className="mb-4 mr-2 rounded-2xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 relative"
+          >
+            Hi! How can I help you today?
+            <div className="absolute -bottom-1 right-6 h-3 w-3 rotate-45 bg-primary" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -156,8 +184,8 @@ export function Chatbot() {
 
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        size="lg"
-        className="h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:scale-105 transition-all duration-200"
+        size="icon"
+        className="h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:scale-110 transition-all duration-200"
       >
         {isOpen ? <X className="h-7 w-7" /> : <MessageSquare className="h-7 w-7" />}
       </Button>
