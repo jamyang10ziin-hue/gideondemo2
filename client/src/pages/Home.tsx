@@ -271,9 +271,11 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <Button className="w-full mt-8 bg-primary text-black font-bold uppercase tracking-widest hover:bg-white rounded-none skew-x-[-10deg]">
-                  <span className="skew-x-[10deg]">Join Now</span>
-                </Button>
+                <ScrollLink to="contact" smooth={true} duration={500} offset={-80} className="w-full mt-8">
+                  <Button className="w-full bg-primary text-black font-bold uppercase tracking-widest hover:bg-white rounded-none skew-x-[-10deg]">
+                    <span className="skew-x-[10deg]">Join Now</span>
+                  </Button>
+                </ScrollLink>
               </motion.div>
             ))}
           </div>
